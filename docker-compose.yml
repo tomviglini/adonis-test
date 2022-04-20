@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2019-CU15-ubuntu-20.04
+    user: '0:0'
+    container_name: mssql
+    ports:
+      - 1433:1433
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: QWE123qwe!
+      MSSQL_PID: Express
+    volumes:
+      - ./data:/var/opt/mssql
