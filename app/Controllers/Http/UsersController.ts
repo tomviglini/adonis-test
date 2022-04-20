@@ -12,7 +12,7 @@ export default class UsersController {
     return await user.fill(payload).save()
   }
 
-  public async show({ params }) {
+  public async show({ params }: HttpContextContract) {
     return await User.findOrFail(params.id)
   }
 
